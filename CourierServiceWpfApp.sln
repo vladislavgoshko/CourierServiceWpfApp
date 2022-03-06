@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierServiceWpfApp", "CourierServiceWpfApp.csproj", "{6652A585-CC4C-4F08-BB78-4B1CEB8323CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierServiceLibrary", "CourierServiceLibrary\CourierServiceLibrary.csproj", "{947B987C-B287-41C8-888B-87A46D1C01D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6652A585-CC4C-4F08-BB78-4B1CEB8323CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6652A585-CC4C-4F08-BB78-4B1CEB8323CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6652A585-CC4C-4F08-BB78-4B1CEB8323CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6652A585-CC4C-4F08-BB78-4B1CEB8323CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947B987C-B287-41C8-888B-87A46D1C01D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947B987C-B287-41C8-888B-87A46D1C01D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947B987C-B287-41C8-888B-87A46D1C01D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947B987C-B287-41C8-888B-87A46D1C01D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EE0AA37-ED19-4978-B175-715557551461}
+	EndGlobalSection
+EndGlobal
