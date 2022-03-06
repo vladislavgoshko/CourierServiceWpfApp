@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourierServiceLibrary
 {
-    public class Class1
+    public class User
     {
     }
 }

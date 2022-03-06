@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierServiceWpfApp", "Cou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierServiceLibrary", "CourierServiceLibrary\CourierServiceLibrary.csproj", "{947B987C-B287-41C8-888B-87A46D1C01D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierServiceTestProject", "CourierServiceTestProject\CourierServiceTestProject.csproj", "{06E20DB4-37F1-472A-9EE9-3B2F4FC4C8CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{947B987C-B287-41C8-888B-87A46D1C01D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947B987C-B287-41C8-888B-87A46D1C01D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947B987C-B287-41C8-888B-87A46D1C01D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E20DB4-37F1-472A-9EE9-3B2F4FC4C8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E20DB4-37F1-472A-9EE9-3B2F4FC4C8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E20DB4-37F1-472A-9EE9-3B2F4FC4C8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E20DB4-37F1-472A-9EE9-3B2F4FC4C8CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
