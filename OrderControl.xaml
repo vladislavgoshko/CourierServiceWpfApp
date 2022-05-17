@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="CourierServiceWpfApp.OrderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CourierServiceWpfApp"
+             mc:Ignorable="d" Height="129" Width="415">
+    <Grid Width="415">
+        <Label Name="OrderNumberLabel" Content="Заказ №" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="10,2,0,0" FontWeight="Bold"/>
+        <Label Name="StateOrderLabel" Content="Состояние заказа: " HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Name="TimeCreatedLabel" Content="Время заказа: " HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Name="WeightLabel" Content="Вес: " HorizontalAlignment="Left" Margin="253,33,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Name="SizesLabel" Content="Габариты: " HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Name="DistanceLabel" Content="Расстояние: " HorizontalAlignment="Left" Margin="253,62,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button Name="ShowMessageButton" Content="Сообщение" Margin="0,2,23,0" FontSize="12" Padding="2,-2,2,2" Click="ShowMessageButton_Click" HorizontalAlignment="Right" Width="71" Height="16" VerticalContentAlignment="Top" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+        <Button Content="x" Margin="0,2,2,0" VerticalAlignment="Top" ToolTip="Отмена заказа" Height="16" Background="Red" Foreground="White" Padding="2,-6,2,2" Click="DeleteOrderButton_Click" FontSize="16" HorizontalAlignment="Right" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="Black"/>
+    </Grid>
+</UserControl>

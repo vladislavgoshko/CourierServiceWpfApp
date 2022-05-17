@@ -1,12 +1,35 @@
-﻿<Window x:Class="CourierServiceWpfApp.MainWindow"
+﻿<Window x:Class="CourierServiceWpfApp.AuthentificationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourierServiceWpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Окно входа" Height="353" Width="310" ResizeMode="NoResize">
     <Grid>
-        
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem Header="Вход" FontSize="16">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Логин" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Height="21" Width="120" Padding="4,0,0,0"/>
+                    <Label Content="Пароль" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Height="21" Width="120" Padding="4,0,0,0"/>
+                    <TextBox Name="LoginTextBox" HorizontalAlignment="Center" Margin="0,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="admin"/>
+                    <PasswordBox Name="PasswordBox" PasswordChar="*" HorizontalAlignment="Center"     Margin="0,87,0,0" VerticalAlignment="Top" Width="120" Password="admin"/>
+                    <Button Name="EnterButton" Content="Войти" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Width="120" Click="EnterButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Регистрация" FontSize="16">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Имя" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Height="20" Width="120" Padding="4,0,0,0" FontSize="16"/>
+                    <Label Content="Логин" HorizontalAlignment="Center" Margin="0,109,0,0" VerticalAlignment="Top" Height="18" Width="120" Padding="4,0,0,0" FontSize="16"/>
+                    <Label Content="Фамилия" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" Height="18" Width="120" Padding="4,0,0,0" FontSize="16"/>
+                    <Label Content="Пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Height="20" Width="120" Padding="4,0,0,0" FontSize="16" Margin="0,150,0,0"/>
+                    <TextBox Name="RegisterNameTextBox" HorizontalAlignment="Center" Margin="0,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+                    <TextBox Name="RegisterSecondNameTextBox" HorizontalAlignment="Center" Margin="0,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+                    <TextBox Name="RegisterLoginTextBox" HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+                    <PasswordBox Name="RegisterPasswordBox" PasswordChar="*" HorizontalAlignment="Center"     Margin="0,170,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
+                    <Button Name="EnterButton_Copy" Content="Регистрация" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Width="120" Click="RegisterButton_Click" FontSize="16"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
