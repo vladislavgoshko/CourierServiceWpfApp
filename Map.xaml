@@ -10,9 +10,9 @@
         <TextBox Name="x" HorizontalAlignment="Left" Margin="735,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="16" IsEnabled="False"/>
         <TextBox Name="y" HorizontalAlignment="Left" Margin="866,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="16" IsEnabled="False"/>
         <Button Content="Выбрать" HorizontalAlignment="Left" Margin="735,140,0,0" VerticalAlignment="Top" Width="209" FontSize="16" Click="Button_Click" Height="36"/>
-        <Image Name="MapImage" Source="D:\4semester\ООП\Kursach\CourierServiceWpfApp\map.jpg" MouseLeftButtonDown="MapImage_PreviewMouseLeftButtonDown" HorizontalAlignment="Left" Height="664" Margin="10,10,0,0" VerticalAlignment="Top" Width="683"/>
+        <Image Name="MapImage" Source="D:\4semester\ООП\Kursach\CourierServiceWpfApp\Map.jpg" MouseLeftButtonDown="MapImage_PreviewMouseLeftButtonDown" HorizontalAlignment="Left" Height="664" Margin="10,10,0,0" VerticalAlignment="Top" Width="683"/>
         <Label Content="Координаты" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="735,69,0,0" VerticalAlignment="Top" Width="209" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Text="Для выбора местоположения точки нажмите левой кнопкой мыши на изображение карты" Margin="710,636,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="258" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Text="Для выбора местоположения точки нажмите левой кнопкой мыши на изображение карты" Margin="710,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="234" TextAlignment="Center"/>
 
     </Grid>
 </Window>

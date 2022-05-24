@@ -47,10 +47,12 @@
             </TabItem>
             <TabItem Name="AddingCourier" Header="Курьеры" FontSize="14">
                 <Grid>
-                    <ScrollViewer Margin="0,0,0,109" Background="#FFE5E5E5">
-                        <StackPanel Name="ersStackPanel" CanVerticallyScroll="True"/>
+                    <ScrollViewer Background="#FFE5E5E5" Margin="0,0,0,77">
+                        <StackPanel Name="CouriersStackPanel" CanVerticallyScroll="True"/>
                     </ScrollViewer>
+                    <Button Content="Добавить курьера" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Height="31" Width="146" FontSize="16" Click="AddCourierButton_Click"/>
                 </Grid>
+
             </TabItem>
         </TabControl>
         <Label Content="ПРОФИЛЬ" HorizontalAlignment="Left" Margin="558,66,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
@@ -62,8 +64,15 @@
         <Label Name="SecNameLabel" Content="фамилия" HorizontalAlignment="Left" Margin="604,112,0,0" HorizontalContentAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
         <Label Name="LoginLabel" Content="логин" HorizontalAlignment="Left" Margin="604,136,0,0" HorizontalContentAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
         <Label Name="IdLabel" Content="id" HorizontalAlignment="Left" Margin="604,160,0,0" HorizontalContentAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-        <Button Content="Обновить" HorizontalAlignment="Left" Margin="443,26,0,0" Click="UpdateOrdersButton_Click" FontSize="16" Height="25" VerticalAlignment="Top"/>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="443,26,0,0" Click="UpdateButton_Click" FontSize="16" Height="25" VerticalAlignment="Top"/>
         <Button Content="Выйти из профиля" HorizontalAlignment="Left" Margin="534,191,0,0" VerticalAlignment="Top" FontSize="16" Click="UnSignButton_Click"/>
         <Button Content="Удалить профиль" HorizontalAlignment="Left" Margin="534,221,0,0" VerticalAlignment="Top" FontSize="16" Click="DeleteUserButton_Click" Width="140"/>
+        <Grid Margin="499,246,46,10">
+            <Label Content="Время работы" FontSize="14"  HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Height="27"/>
+            <TextBox Name="StartTimeWorkTextBox" HorizontalContentAlignment="Right" FontSize="14" Text="8" Margin="58,42,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45" IsEnabled="False"/>
+            <TextBox Name="EndTimeWorkTextBox" FontSize="14" Text="24" Margin="108,42,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45" IsEnabled="False"/>
+
+        </Grid>
+
     </Grid>
 </Window>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CourierServiceLibrary;
 using CourierServiceLibrary.Models;
+using CourierServiceWpfApp.UserControls;
 
 namespace CourierServiceWpfApp
 {
@@ -27,6 +28,10 @@ namespace CourierServiceWpfApp
             DisplayOrders();
             if (Authentification.signedUser.Role == UserRole.Client)
                 HideElementsForClients();
+            else
+            {
+                DisplayCouriers();
+            }
         }
         private void HideElementsForClients()
         {
@@ -38,11 +43,30 @@ namespace CourierServiceWpfApp
             OrdersStackPanel.Children.Clear();
             foreach (Order order in ProjectResources.Instance.OrdersRepository.Read())
             {
-                if (order.UserId == Authentification.signedUser.Id)
+                if(Authentification.signedUser.Role == UserRole.Admin)
                 {
-                    OrdersStackPanel.Children.Add(new OrderControl(this, order, i));
+                    OrdersStackPanel.Children.Add(new OrderControl(this, order, i) { SetCourierButton = { Visibility = Visibility.Hidden }, ShowMessageButton = { IsEnabled = true } });
                     i++;
                 }
+                else
+                {
+                    if (order.UserId == Authentification.signedUser.Id)
+                    {
+                        OrdersStackPanel.Children.Add(new OrderControl(this, order, i) { SetCourierButton = { Visibility = Visibility.Hidden } });
+                        i++;
+                    }
+                }
+               
+            }
+        }
+        internal void DisplayCouriers()
+        {
+            int i = 1;
+            CouriersStackPanel.Children.Clear();
+            foreach (Courier courier in ProjectResources.Instance.CouriersRepository.Read())
+            {
+                CouriersStackPanel.Children.Add(new CourierControl(this, courier, i));
+                i++;
             }
         }
         private void SetStartLocationButton_Click(object sender, RoutedEventArgs e)
@@ -94,9 +118,11 @@ namespace CourierServiceWpfApp
 
         }
 
-        private void UpdateOrdersButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             DisplayOrders();
+            if (Authentification.signedUser.Role == UserRole.Admin)
+                DisplayCouriers();
         }
 
         private void UnSignButton_Click(object sender, RoutedEventArgs e)
@@ -115,6 +141,14 @@ namespace CourierServiceWpfApp
                 new AuthentificationWindow().Show();
                 Close();
             }
+        }
+
+        private void AddCourierButton_Click(object sender, RoutedEventArgs e)
+        {
+            new AddingNewCourier(this)
+            {
+                TypeCourierComboBox =  { ItemsSource = Enum.GetValues(typeof(TransportType)) }
+            }.Show();
         }
     }
 }

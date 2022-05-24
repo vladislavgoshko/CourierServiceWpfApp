@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CourierServiceLibrary.Authentification" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Authentification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourierServiceLibrary.ProjectResources" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAQAACAAAAABAAAAAAICAAAAQAAgAAAAAAA=</HashCode>
+      <FileName>ProjectResources.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourierServiceLibrary.Models.Order" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABQBAEAAAAEgAEAAEhAAgCAAIQAAAEAIQAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourierServiceLibrary.Models.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAEkAAAAAQAAAAAAIACAAAQAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourierServiceLibrary.Repository.CourierRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAEAAAAAAAAA=</HashCode>
+      <FileName>Repository\CourierRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourierServiceLibrary.Repository.OrderRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAEAAAAAAAAA=</HashCode>
+      <FileName>Repository\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourierServiceLibrary.Repository.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAEAAAAAAAAA=</HashCode>
+      <FileName>Repository\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="CourierServiceLibrary.IBaseEntity" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IBaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CourierServiceLibrary.Repository.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CourierServiceLibrary.Readiness" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAIBAAAAA=</HashCode>
+      <FileName>Readiness.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CourierServiceLibrary.UserRole" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CourierServiceLibrary.Models.TransportType" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Models\TransportType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,14 @@
+﻿<Window x:Class="CourierServiceWpfApp.SendMessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourierServiceWpfApp"
+        mc:Ignorable="d"
+        Title="Сообщение ссылаясь на заказ" Height="212" Width="377" ResizeMode="NoResize">
+    <Grid>
+        <TextBox Name="MessageTextBox" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" Height="122"/>
+        <Button Content="Отправить" HorizontalAlignment="Center" Margin="0,137,0,0" VerticalAlignment="Top" FontSize="14" Width="127" Click="Button_Click"/>
+
+    </Grid>
+</Window>

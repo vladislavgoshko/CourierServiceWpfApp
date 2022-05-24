@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CourierServiceWpfApp.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,6 +41,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,15 +61,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddingNewCourier.xaml.cs">
+      <DependentUpon>AddingNewCourier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendMessageWindow.xaml.cs">
+      <DependentUpon>SendMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetOrderToCourierWindow.xaml.cs">
+      <DependentUpon>SetOrderToCourierWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrderControl.xaml.cs">
+    <Compile Include="UserControls\CourierControl.xaml.cs">
+      <DependentUpon>CourierControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimetableOfCourier.xaml.cs">
+      <DependentUpon>TimetableOfCourier.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddingNewCourier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendMessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetOrderToCourierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,7 +113,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OrderControl.xaml">
+    <Page Include="UserControls\CourierControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\OrderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimetableOfCourier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

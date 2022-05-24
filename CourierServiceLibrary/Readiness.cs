@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourierServiceLibrary
 {
+    /// <summary>
+    /// Перечисление для состояния заказов
+    /// </summary>
     public enum Readiness
     {
         /// <summary>
