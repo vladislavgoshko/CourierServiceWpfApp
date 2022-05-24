@@ -126,8 +126,8 @@ namespace CourierServiceLibrary.Models
             else
             {
                 Order order = (Order)obj;
-                return Id == order.Id && Readiness == order.Readiness &&
-                    StartCoords == order.StartCoords && EndCoords == order.EndCoords && UserId == order.UserId && CourierId == order.CourierId;
+                return Id == order.Id && Readiness == order.Readiness && Enumerable.SequenceEqual(EndCoords, order.EndCoords) &&
+                    Enumerable.SequenceEqual(StartCoords, order.StartCoords) && UserId == order.UserId && CourierId == order.CourierId;
             }
         }
         /// <summary>

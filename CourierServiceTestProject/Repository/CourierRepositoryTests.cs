@@ -50,6 +50,7 @@ namespace CourierServiceLibrary.Repository.Tests
         [TestMethod()]
         public void UpdateTest()
         {
+            courier.Name = "Владислав";
             courier.SecondName = "Сергеев";
             ProjectResources.Instance.CouriersRepository.Update(courier);
             IEnumerable<Courier> couriers = ProjectResources.Instance.CouriersRepository.Read();

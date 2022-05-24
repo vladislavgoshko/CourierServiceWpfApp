@@ -52,7 +52,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CourierTests.cs" />
     <Compile Include="Repository\CourierRepositoryTests.cs" />
+    <Compile Include="Repository\OrderRepositoryTests.cs" />
+    <Compile Include="Repository\UserRepositoryTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
