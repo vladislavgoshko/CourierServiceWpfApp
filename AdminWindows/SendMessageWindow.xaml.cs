@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using CourierServiceLibrary.Models;
-using CourierServiceLibrary.Repository;
 using CourierServiceLibrary;
+using CourierServiceWpfApp.MainWindows;
 
-namespace CourierServiceWpfApp
+namespace CourierServiceWpfApp.AdminWindows
 {
     /// <summary>
     /// Логика взаимодействия для SendMessageWindow.xaml
@@ -24,6 +12,11 @@ namespace CourierServiceWpfApp
     {
         private UserWindow _userWindow;
         private Order _order;
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="userWindow"></param>
+        /// <param name="order"></param>
         public SendMessageWindow(UserWindow userWindow, Order order)
         {
             InitializeComponent();

@@ -1,14 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CourierServiceLibrary.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CourierServiceLibrary.Models;
+using CourierServiceLibrary;
 
-namespace CourierServiceLibrary.Models.Tests
+namespace CourierServiceTestProject.Models.Tests
 {
-    [TestClass()]
+    /// <summary>
+    /// Сводное описание для UnitTest1
+    /// </summary>
+    [TestClass]
     public class CourierTests
     {
         Courier courier = new Courier()
@@ -23,8 +24,8 @@ namespace CourierServiceLibrary.Models.Tests
         Order order1 = new Order()
         {
             Created = DateTime.Now,
-            StartCoords = new double[] { 34.1, 90.0 },
-            EndCoords = new double[] { 21, 998.12 },
+            StartCoords = new double[] { 24, 90.0 },
+            EndCoords = new double[] { 21, 5.12 },
             Weigth = 345.1,
             Height = 1312,
             Length = 123,
@@ -32,7 +33,7 @@ namespace CourierServiceLibrary.Models.Tests
             CourierId = 1,
             Message = "Письмо от администрации",
             UserId = 1,
-            Readiness = Readiness.Completed,
+            Readiness = Readiness.Pending,
         };
         Order order2 = new Order()
         {
@@ -46,43 +47,32 @@ namespace CourierServiceLibrary.Models.Tests
             CourierId = 1,
             Message = "Письмо от администрации",
             UserId = 1,
-            Readiness = Readiness.Completed,
+            Readiness = Readiness.Pending,
         };
+
+        [TestMethod()]
+        public void AddOrderTest()
+        {
+            Assert.IsTrue(courier.AddOrder(out string _, 0, 24, order1));
+            Assert.IsFalse(courier.AddOrder(out string message, 7, 15, order2));
+            Assert.AreEqual(message, "Заказ невозможно выполнить за целый рабочий день");
+        }
 
         [TestMethod()]
         public void GetDistanceFromEndLocationTest()
         {
-            Assert.Fail();
+            Assert.AreEqual(Math.Round(courier.GetDistanceFromEndLocation(new double[] {0, 0}), 2), 22.09);
         }
 
         [TestMethod()]
         public void IsFreeAndWhenTest()
         {
-            Assert.Fail();
+            Assert.IsFalse(courier.IsFreeAndWhen(out DateTime _));
         }
-
         [TestMethod()]
         public void TypeToStringTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void ToStringTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void EqualsTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GetHashCodeTest()
-        {
-            Assert.Fail();
+            Assert.AreEqual("Машина", Courier.TypeToString(TransportType.Car));
         }
     }
 }

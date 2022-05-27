@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CourierServiceLibrary.Models
 {
@@ -63,17 +60,6 @@ namespace CourierServiceLibrary.Models
         /// Сообщение от администрации
         /// </summary>
         public string Message { get; set; }
-        /*
-        public Order(int id, Readiness readiness, double[] startCoords, double[] endCoords, int itemId, int userId)
-        {
-            Id = id;
-            Readiness = readiness;
-            StartCoords = startCoords;
-            EndCoords = endCoords;
-            ItemId = itemId;
-            UserId = userId;
-            CourierId = -1;
-        }*/
         /// <summary>
         /// Метод возвращающий расстояние между начальной и конечной точками
         /// </summary>

@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using CourierServiceLibrary.Models;
-using CourierServiceLibrary.Repository;
 using CourierServiceLibrary;
 using CourierServiceWpfApp.UserControls;
+using CourierServiceWpfApp.MainWindows;
 
-namespace CourierServiceWpfApp
+namespace CourierServiceWpfApp.AdminWindows
 {
     /// <summary>
     /// Логика взаимодействия для ListOrdersWindow.xaml
@@ -34,7 +22,7 @@ namespace CourierServiceWpfApp
             foreach (Order order in ProjectResources.Instance.OrdersRepository.Read())
             {
                 if (order.Readiness == Readiness.Pending)
-                    OrdersStackPanel.Children.Add(new OrderControl(this ,order, i++));
+                    OrdersStackPanel.Children.Add(new OrderControl(this, order, i++));
             }
         }
     }

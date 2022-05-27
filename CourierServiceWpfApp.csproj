@@ -61,16 +61,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddingNewCourier.xaml.cs">
+    <Compile Include="AdminWindows\AddingNewCourier.xaml.cs">
       <DependentUpon>AddingNewCourier.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SendMessageWindow.xaml.cs">
+    <Compile Include="AdminWindows\SendMessageWindow.xaml.cs">
       <DependentUpon>SendMessageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SetOrderToCourierWindow.xaml.cs">
+    <Compile Include="AdminWindows\SetOrderToCourierWindow.xaml.cs">
       <DependentUpon>SetOrderToCourierWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Map.xaml.cs">
+    <Compile Include="MainWindows\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CourierControl.xaml.cs">
@@ -79,21 +79,21 @@
     <Compile Include="UserControls\OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TimetableOfCourier.xaml.cs">
+    <Compile Include="AdminWindows\TimetableOfCourier.xaml.cs">
       <DependentUpon>TimetableOfCourier.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserWindow.xaml.cs">
+    <Compile Include="MainWindows\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddingNewCourier.xaml">
+    <Page Include="AdminWindows\AddingNewCourier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SendMessageWindow.xaml">
+    <Page Include="AdminWindows\SendMessageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SetOrderToCourierWindow.xaml">
+    <Page Include="AdminWindows\SetOrderToCourierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,7 +109,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Map.xaml">
+    <Page Include="MainWindows\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,11 +121,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TimetableOfCourier.xaml">
+    <Page Include="AdminWindows\TimetableOfCourier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserWindow.xaml">
+    <Page Include="MainWindows\UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

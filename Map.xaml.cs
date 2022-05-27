@@ -19,9 +19,9 @@ namespace CourierServiceWpfApp
     /// </summary>
     public partial class Map : Window
     {
-        TextBox X;
-        TextBox Y;
-        public Map(TextBox x, TextBox y)
+        TextBox X { get; set; }
+        TextBox Y { get; set; }
+        public Map(ref TextBox x, ref TextBox y)
         {
             InitializeComponent();
             X = x;
@@ -30,20 +30,9 @@ namespace CourierServiceWpfApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (x.Text == "" || y.Text == "")
-                MessageBox.Show("Вы не выбрали местоположение");
-            else
-            {
-                X.Text = x.Text;
-                Y.Text = y.Text;
-                Close();
-            }
-        }
-
-        private void MapImage_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            x.Text = e.GetPosition(MapImage).X.ToString();
-            y.Text = e.GetPosition(MapImage).Y.ToString();
+            X = x;
+            Y = y;
+            Close();
         }
     }
 }

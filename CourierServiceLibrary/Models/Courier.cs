@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace CourierServiceLibrary.Models
 {
@@ -71,6 +68,54 @@ namespace CourierServiceLibrary.Models
         /// Скорость
         /// </summary>
         public double Speed { get; set; }
+        /// <summary>
+        /// Метод для добавления заказа курьеру
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="startHour"></param>
+        /// <param name="endHour"></param>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool AddOrder(out string message, int startHour, int endHour, Order order)
+        {
+            message = "";
+            double minutesToCompletingOrder = (GetDistanceFromEndLocation(order.StartCoords)
+                + order.GetDistance()) / Speed * 60;
+            if (DateTime.Now.Hour < endHour && DateTime.Now.Hour > startHour)
+            {
+                if (minutesToCompletingOrder < (endHour - startHour) * 60)
+                {
+                    IsFreeAndWhen(out DateTime when);
+                    if (DateTime.Now.Date == when.Date)
+                    {
+                        when = when.AddMinutes(minutesToCompletingOrder);
+                        if (when.Hour < endHour && when.Hour > startHour)
+                        {
+                            order.Readiness = Readiness.InProgress;
+                            order.CourierId = Id;
+
+                            order.StartedExecuting = new DateTime(DateTime.Now.Year, DateTime.Now.Month,
+                                DateTime.Now.Day, when.Hour, when.Minute, 0);
+                            ListOrdersId.Add(order.Id);
+                            LastLocation = order.EndCoords;
+
+                            ProjectResources.Instance.OrdersRepository.Update(order);
+                            ProjectResources.Instance.CouriersRepository.Update(this);
+                            return true;
+                        }
+                        else
+                            message = "Курьер не успеет выполнить заказ до конца рабочего дня";
+                    }
+                    else
+                        message = "Курьер не успеет выполнить заказ до конца рабочего дня";
+                }
+                else
+                    message = "Заказ невозможно выполнить за целый рабочий день";
+            }
+            else
+                message = "Нельзя назначить заказ в нерабочее время";
+            return false;
+        }
         /// <summary>
         /// Метод возвращающий расстояние от последней точки до указанной точки
         /// </summary>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CourierServiceLibrary.Models
+﻿namespace CourierServiceLibrary.Models
 {
     /// <summary>
     /// Class of User
@@ -34,20 +28,20 @@ namespace CourierServiceLibrary.Models
         /// <summary>
         /// Login
         /// </summary>
-        public string Login { get; set; }/*
-        public User(UserRole role, int id, string name, string secondName, string login, string password)
-        {
-            Role = role;
-            Id = id;
-            Name = name;
-            SecondName = secondName;
-            Login = login;
-            Password = password;
-        }*/
+        public string Login { get; set; }
+        /// <summary>
+        /// ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"Id: {Id}, Name: {Name}, SecondName: {SecondName}, Login: {Login}, Role: {Role}";
         }
+        /// <summary>
+        /// Equals
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if ((obj == null) || !GetType().Equals(obj.GetType()))
@@ -61,6 +55,10 @@ namespace CourierServiceLibrary.Models
                     Role == u.Role && Login == u.Login && Password == u.Password;
             }
         }
+        /// <summary>
+        /// GetHashCode
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return Role.GetHashCode() * Id.GetHashCode() * Name.GetHashCode() * Name.GetHashCode() * 

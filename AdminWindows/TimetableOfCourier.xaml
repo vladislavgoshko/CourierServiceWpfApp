@@ -1,11 +1,11 @@
-﻿<Window x:Class="CourierServiceWpfApp.SetOrderToCourierWindow"
+﻿<Window x:Class="CourierServiceWpfApp.AdminWindows.TimetableOfCourier"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CourierServiceWpfApp"
+        xmlns:local="clr-namespace:CourierServiceWpfApp.AdminWindows"
         mc:Ignorable="d"
-        Title="Список не назначенных заказов" Height="413" Width="448" ResizeMode="NoResize">
+        Title="Расписание курьера" Height="450" Width="448" ResizeMode="NoResize">
     <Grid>
         <ScrollViewer Background="#FFE5E5E5" Margin="0,0,0,10">
             <StackPanel Name="OrdersStackPanel" CanVerticallyScroll="True" Width="415"/>

@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-
-namespace CourierServiceLibrary.Models
+﻿namespace CourierServiceLibrary.Models
 {
     /// <summary>
     /// Перечисление типов транспорта
     /// </summary>
     public enum TransportType
     {
-        [Display(Name = "Пеший")]
+        /// <summary>
+        /// Пеший
+        /// </summary>
         Foot,
-        [Display(Name = "Велосипед")]
+        /// <summary>
+        /// Велосипед
+        /// </summary>
         Bicycle,
-        [Display(Name = "Машина")]
+        /// <summary>
+        /// Машина
+        /// </summary>
         Car
     }
 }

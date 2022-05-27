@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using CourierServiceLibrary;
 using CourierServiceLibrary.Models;
+using CourierServiceWpfApp.AdminWindows;
+using CourierServiceWpfApp.MainWindows;
 
 namespace CourierServiceWpfApp.UserControls
 {
@@ -25,7 +16,7 @@ namespace CourierServiceWpfApp.UserControls
         private Order _order;
         private UserWindow _userWindow;
         private SetOrderToCourierWindow _setOrderToCourierWindow;
-        public OrderControl(UserWindow userWindow,Order order, int number)
+        public OrderControl(UserWindow userWindow, Order order, int number)
         {
             InitializeComponent();
             _order = order;
@@ -39,7 +30,7 @@ namespace CourierServiceWpfApp.UserControls
             if (order.Message == null || order.Message == "")
                 ShowMessageButton.IsEnabled = false;
         }
-        public OrderControl(SetOrderToCourierWindow setOrderToCourierWindow, Order order, int number) : this (setOrderToCourierWindow._userWindow, order, number)
+        public OrderControl(SetOrderToCourierWindow setOrderToCourierWindow, Order order, int number) : this(setOrderToCourierWindow._userWindow, order, number)
         {
             _setOrderToCourierWindow = setOrderToCourierWindow;
         }
@@ -82,40 +73,17 @@ namespace CourierServiceWpfApp.UserControls
         /// <param name="e"></param>
         private void SetOrderToCourierButton_Click(object sender, RoutedEventArgs e)
         {
-            Courier courier = _setOrderToCourierWindow._courier;
-            int startHour = Convert.ToInt32(_userWindow.StartTimeWorkTextBox.Text), 
-                endHour = Convert.ToInt32(_userWindow.EndTimeWorkTextBox.Text);
+            int startHourWorkDay = Convert.ToInt32(_userWindow.StartTimeWorkTextBox.Text),
+                endHourWorkDay = Convert.ToInt32(_userWindow.EndTimeWorkTextBox.Text);
 
-            double minutesToCompletingOrder = (courier.GetDistanceFromEndLocation(_order.StartCoords) + _order.GetDistance()) / courier.Speed * 60;
-            if (minutesToCompletingOrder < (endHour - startHour) * 60)
-            {
-                courier.IsFreeAndWhen(out DateTime when);
-                if (DateTime.Now.Date == when.Date)
-                {
-                    when = when.AddMinutes(minutesToCompletingOrder);
-                    if (when.Hour < endHour && when.Hour > startHour)
-                    {
-                        _order.Readiness = Readiness.InProgress;
-                        _order.CourierId = courier.Id;
-
-                        _order.StartedExecuting = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, when.Hour, when.Minute, 0);
-                        courier.ListOrdersId.Add(_order.Id);
-                        courier.LastLocation = _order.EndCoords;
-
-                        ProjectResources.Instance.OrdersRepository.Update(_order);
-                        ProjectResources.Instance.CouriersRepository.Update(courier);
-                        _userWindow.DisplayCouriers();
-                        _userWindow.DisplayOrders();
-                        _setOrderToCourierWindow.Close();
-                    }
-                    else
-                        MessageBox.Show("Курьер не успеет выполнить заказ до конца рабочего дня");
-                }
-                else
-                    MessageBox.Show("Курьер не успеет выполнить заказ до конца рабочего дня");
-            }
+            if (!_setOrderToCourierWindow._courier.AddOrder(out string message, startHourWorkDay, endHourWorkDay, _order))
+                MessageBox.Show(message);
             else
-                MessageBox.Show("Заказ невозможно выполнить за целый рабочий день");
+            {
+                _userWindow.DisplayCouriers();
+                _userWindow.DisplayOrders();
+                _setOrderToCourierWindow.Close();
+            }
         }
     }
 }
